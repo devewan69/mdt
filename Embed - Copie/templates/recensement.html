@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Recensement</title>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/photos-gratuite/paysage-futuriste-dubai_23-2151339730.jpg?size=626&ext=jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recensement Civil</h1>
+        <form action="{{ url_for('submit_rp') }}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date de naissance</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="telephone">Téléphone</label>
+                <input type="text" id="telephone" name="telephone" required>
+            </div>
+            <div class="form-group">
+                <label for="type">Type</label>
+                <input type="text" id="type" name="type" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Genre</label>
+                <input type="text" id="gender" name="gender" required>
+            </div>
+            <div class="form-group">
+                <label for="id_unique">ID Unique</label>
+                <input type="text" id="id_unique" name="id_unique" required>
+            </div>
+            <div class="form-group">
+                <label for="profession">Profession</label>
+                <input type="text" id="profession" name="profession" required>
+            </div>
+            <div class="form-group">
+                <label for="criminal_affiliation">Appartenance criminelle</label>
+                <input type="text" id="criminal_affiliation" name="criminal_affiliation" required>
+            </div>
+            <div class="form-group">
+                <label for="id_card">Carte d'identité</label>
+                <input type="file" id="id_card" name="id_card">
+            </div>
+            <div class="form-group">
+                <label for="driver_license">Permis de conduire</label>
+                <input type="file" id="driver_license" name="driver_license">
+            </div>
+            <button type="submit">Valider</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Paramètres</title>
+</head>
+<body>
+    <h2>Paramètres</h2>
+    <p>Utilisateur : {{ user.username }}</p>
+    <p>ID Unique : {{ user.unique_id }}</p>
+    {% if user.is_discord_linked %}
+    <p>Compte Discord lié</p>
+    {% else %}
+    <a href="{{ url_for('link_discord') }}">Lier le compte Discord</a>
+    {% endif %}
+</body>
+</html>

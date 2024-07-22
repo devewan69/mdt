@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrestation</title>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/photos-gratuite/paysage-futuriste-dubai_23-2151339730.jpg?size=626&ext=jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nouvelle Arrestation</h1>
+        <form action="{{ url_for('submit_arrestation') }}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="suspect">Nom du suspect</label>
+                <input type="text" id="suspect" name="suspect" required>
+            </div>
+            <div class="form-group">
+                <label for="agents">Agents présents</label>
+                <input type="text" id="agents" name="agents" required>
+            </div>
+            <div class="form-group">
+                <label for="facts">Faits reprochés</label>
+                <textarea id="facts" name="facts" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="arrest_date">Date de l'arrestation</label>
+                <input type="date" id="arrest_date" name="arrest_date" required>
+            </div>
+            <div class="form-group">
+                <label for="gav">GAV</label>
+                <input type="checkbox" id="gav" name="gav">
+            </div>
+            <div class="form-group">
+                <label for="seizures">Saisies</label>
+                <input type="checkbox" id="seizures" name="seizures">
+            </div>
+            <div class="form-group">
+                <label for="observations">Observations</label>
+                <textarea id="observations" name="observations" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="arrest_photo">Photo de l'arrestation</label>
+                <input type="file" id="arrest_photo" name="arrest_photo">
+            </div>
+            <button type="submit">Valider</button>
+        </form>
+    </div>
+</body>
+</html>

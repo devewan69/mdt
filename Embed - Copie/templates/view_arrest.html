@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails de l'Arrestation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .details {
+            margin-bottom: 20px;
+        }
+        .details label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Détails de l'Arrestation</h2>
+        <div class="details">
+            <label>Suspect:</label>
+            <p>{{ arrest.suspect }}</p>
+        </div>
+        <div class="details">
+            <label>Agents présents:</label>
+            <p>{{ arrest.agents }}</p>
+        </div>
+        <div class="details">
+            <label>Faits reprochés:</label>
+            <p>{{ arrest.facts }}</p>
+        </div>
+        <div class="details">
+            <label>Date de l'arrestation:</label>
+            <p>{{ arrest.arrest_date }}</p>
+        </div>
+        <div class="details">
+            <label>GAV:</label>
+            <p>{{ arrest.gav }}</p>
+        </div>
+        <div class="details">
+            <label>Saisies:</label>
+            <p>{{ arrest.seizures }}</p>
+        </div>
+        <div class="details">
+            <label>Observations:</label>
+            <p>{{ arrest.observations }}</p>
+        </div>
+        {% if arrest.arrest_photo_path %}
+        <div class="details">
+            <label>Photo de l'arrestation:</label>
+            <img src="{{ url_for('static', filename=arrest.arrest_photo_path.split('/')[-1]) }}" alt="Photo de l'arrestation">
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
